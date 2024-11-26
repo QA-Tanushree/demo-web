@@ -1,0 +1,11 @@
+{
+    "content": {
+        "loginSuccess": "Welcome",
+        "loginFailure": "Invalid User Credential",
+        "missingUsername": "Login ID can't be empty",
+        "emptyPin": "Pin can't be empty",
+        "makerCreate":"Maker Created",
+        "checkerCreate":"Checker Created"
+
+    }
+}

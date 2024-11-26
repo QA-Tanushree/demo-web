@@ -1,0 +1,19 @@
+{
+    "maker": {
+      "fullName": "Maker",
+      "mobileNumber": "01912345678",
+      "email": "maker@example.com",
+      "address": "Maker Address",
+      "gender": "female",
+      "successMessage": "Maker Created"
+    },
+    "checker": {
+      "fullName": "Checker",
+      "mobileNumber": "01998765432",
+      "email": "checker@example.com",
+      "address": "Checker Address",
+      "gender": "male",
+      "successMessage": "Checker Created"
+    }
+  }
+  

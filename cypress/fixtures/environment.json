@@ -1,0 +1,13 @@
+{
+    "test":{
+        "url":"https://180.dmoney.com.bd:8181/salary-disbursement-portal/signin",
+        "username":"01969612054",
+        "password":"Dm1234.."
+    },
+    "live":{
+        "url":"https://180.dmoney.com.bd:8181/salary-disbursement-portal/signin",
+        "username":"01969612054",
+        "password":"Dm1234.."
+    }
+}
+  
