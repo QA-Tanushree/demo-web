@@ -1,4 +1,4 @@
-// cypress/pageObjects/loginPage.js
+///<reference types="cypress" />
 
 class LoginPage {
     constructor() {
@@ -40,9 +40,44 @@ class LoginPage {
         this.enterUsername(username); // Enter username
         this.enterPassword(password); // Enter password
         this.clickLogin(); // Click login
-        this.clickLogin()
     }
-    
+
+    // Function to validate form fields
+    validateFields({ fields = {}, expectedErrors = [] }) {
+        // Populate form fields based on the provided 'fields' object
+        Object.entries(fields).forEach(([field, value]) => {
+            const selector = this.getFieldSelector(field);
+            cy.get(selector).clear();
+            
+            if (value) {
+                cy.get(selector).type(value);
+            }
+        });
+
+        // Click the login button or form submit after setting fields
+        this.clickLogin(); // This line requires loginPage to be defined
+
+        // Check for each expected error message
+        expectedErrors.forEach((error) => {
+            cy.contains(error).should('be.visible');
+        });
+
+        // If no errors are expected, confirm no error modals are shown
+        if (expectedErrors.length === 0) {
+            cy.get('.ant-modal-confirm-title').should('not.exist');
+        }
+    }
+
+    // Helper function to map field names to selectors
+    getFieldSelector(field) {
+        const selectors = {
+            username: '.ant-form-item-children > .ant-input',
+            password: '.ant-input-password > .ant-input',
+        };
+        return selectors[field];
+    }
 }
 
+// Export an instance of the class
 export const loginPage = new LoginPage();
+
